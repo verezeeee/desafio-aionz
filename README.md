@@ -41,7 +41,7 @@ Após a execução, a aplicação estará disponível nos seguintes endereços:
 
 Caso prefira rodar o frontend e backend sem o Docker Compose (assumindo que o banco de dados esteja rodando separadamente ou você configure o acesso):
 
-### Backend (Node.js/Express)
+### Backend (Nest.js)
 
 1. Entre na pasta do backend:
     ```sh
