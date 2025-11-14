@@ -1,15 +1,17 @@
 import { DataSource } from 'typeorm';
-import { Product } from './products/entities/product.entity';
+import * as dotenv from 'dotenv';
+
+dotenv.config();
 
 export const AppDataSource = new DataSource({
   type: 'postgres',
-  host: 'localhost',
-  port: 5432,
-  username: 'postgres',
-  password: 'postgres',
-  database: 'desafio_db',
-  entities: [Product],
-  migrations: ['src/migrations/*.ts'],
+  host: process.env.DB_HOST || 'postgres',
+  port: parseInt(process.env.DB_PORT || '5432', 10),
+  username: process.env.DB_USERNAME || 'postgres',
+  password: process.env.DB_PASSWORD || 'postgres',
+  database: process.env.DB_DATABASE || 'desafio_db',
+  entities: [__dirname + '/**/*.entity{.ts,.js}'],
+  migrations: [__dirname + '/migrations/*{.ts,.js}'],
   synchronize: false,
-  logging: true,
+  logging: process.env.NODE_ENV !== 'production',
 });

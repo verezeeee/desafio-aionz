@@ -8,14 +8,16 @@ import { ProductsModule } from './products/products.module';
   imports: [
     TypeOrmModule.forRoot({
       type: 'postgres',
-      host: 'localhost',
-      port: 5432,
-      username: 'postgres',
-      password: 'postgres',
-      database: 'desafio_db',
+      host: process.env.DB_HOST || 'localhost',
+      port: parseInt(process.env.DB_PORT || '5432', 10),
+      username: process.env.DB_USERNAME || 'postgres',
+      password: process.env.DB_PASSWORD || 'postgres',
+      database: process.env.DB_DATABASE || 'desafio_db',
       autoLoadEntities: true,
-      synchronize: false, // Disable auto-sync to prevent schema changes
+      synchronize: false,
       logging: process.env.NODE_ENV !== 'production',
+      retryAttempts: 5,
+      retryDelay: 5000,
     }),
     ProductsModule,
   ],

@@ -1,0 +1,16 @@
+node_modules
+npm-debug.log
+Dockerfile
+docker-compose.yml
+.git
+.gitignore
+.env
+*.md
+coverage
+**/*.ts
+!src/**/*.ts
+!tsconfig*.json
+!nest-cli.json
+!package*.json
+!yarn.lock
+!pnpm-lock.yaml

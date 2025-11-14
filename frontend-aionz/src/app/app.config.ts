@@ -28,7 +28,6 @@ export const appConfig: ApplicationConfig = {
       })
     ),
     
-    // NgRx Store
     provideStore(),
     provideEffects(),
     provideRouterStore(),
