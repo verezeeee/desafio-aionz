@@ -1,6 +1,6 @@
 import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn } from 'typeorm';
 
-@Entity('products')
+@Entity('product')
 export class Product {
     @PrimaryGeneratedColumn()
     id: number;
@@ -17,12 +17,12 @@ export class Product {
     @Column({ nullable: true })
     category: string;
 
-    @Column({ nullable: true })
+    @Column({ name: 'imageUrl', nullable: true })
     imageUrl: string;
 
-    @CreateDateColumn({ name: 'created_at' })
-    createdAt: Date;
+    @Column({ name: 'createdAt', type: 'timestamp', nullable: true })
+    createdAt: Date = new Date();
 
-    @UpdateDateColumn({ name: 'updated_at' })
-    updatedAt: Date;
+    @Column({ name: 'updatedAt', type: 'timestamp', nullable: true })
+    updatedAt: Date = new Date();
 }

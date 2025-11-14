@@ -14,7 +14,7 @@ import { ProductsModule } from './products/products.module';
       password: 'postgres',
       database: 'desafio_db',
       autoLoadEntities: true,
-      synchronize: true,
+      synchronize: false, // Disable auto-sync to prevent schema changes
       logging: process.env.NODE_ENV !== 'production',
     }),
     ProductsModule,
