@@ -27,3 +27,9 @@
 mat-card-actions {
     margin-top: auto;
 }
+
+img[mat-card-image] {
+  height: 400px;       // Set a fixed height for the image area
+  object-fit: cover;   // Ensure the image covers the area without distortion
+  width: 100%;          // Make sure the image spans the full width of the card
+}

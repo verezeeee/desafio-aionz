@@ -1,6 +1,6 @@
 # Desafio Aionz
 
-Siga os passos abaixo para executar o projeto em seu ambiente local. O Container do Docker já sobe as imagens do frontend, backend e banco de dados.
+Siga os passos abaixo para executar o projeto em seu ambiente local. O Container do Docker já sobe as imagens do frontend, backend e banco de dados. O frontend possui um Storybook configurado para visualizar os componentes, e caso o projeto rode pelo docker, um servidor do nginx serve como proxy, servindo os arquivos estáticos, evitando problemas de origem.
 
 ---
 
@@ -77,6 +77,11 @@ Caso prefira rodar o frontend e backend sem o Docker Compose (assumindo que o ba
     ng dev
     ```
     O frontend estará disponível em `http://localhost:4200`.
+    O projeto contém sstorybook configurado também, e para iniciar ele, execute:
+    ```sh
+    npm run storybook
+    ```
+    O comando `npm run storybook` irá iniciar o Storybook na porta [6006](http://localhost:6006).
 
 ---
 
