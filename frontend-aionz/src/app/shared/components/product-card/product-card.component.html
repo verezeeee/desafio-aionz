@@ -1,0 +1,11 @@
+<mat-card class="product-card">
+    <img mat-card-image [src]="product.imageUrl || 'assets/placeholder.jpg'" [alt]="product.name">
+    <mat-card-content>
+        <h2>{{ product.name }}</h2>
+        <p class="price">{{ product.price | currency:'BRL':'symbol':'1.2-2' }}</p>
+        <p class="category" *ngIf="product.category">{{ product.category }}</p>
+    </mat-card-content>
+    <mat-card-actions>
+        <a mat-raised-button color="primary" [routerLink]="['/produto', product.id]">Ver Detalhes</a>
+    </mat-card-actions>
+</mat-card>
